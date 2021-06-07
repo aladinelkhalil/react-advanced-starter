@@ -8,11 +8,9 @@ This exercise introduces the _useReducer_ hook; according to the [documentation]
 
 This part of the exercise, aside from recapitulating the _useEffect_ hook, illustrates some of the issues that may arise when there is complex state logic in your application.
 
-Implement the section(s) marked with _TODO_ in `example_1.jsx`.
+* Implement the section(s) marked with _TODO_ in `example_1.jsx`.
 
-### Optional
-
-Add an _input_ element (in the Counter component) to change _by how much_ the counter should be updated.
+* Add an _input_ element (in the Counter component) to change _by how much_ the counter should be updated.
 
 ## Example 2
 
