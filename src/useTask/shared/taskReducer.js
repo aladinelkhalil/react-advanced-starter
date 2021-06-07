@@ -10,7 +10,7 @@ export function reducer(state, action = {}) {
     // TASK_CANCEL
 
     default:
-      return initialState;
+      throw new Error('Unknown action!');
   }
 }
 
