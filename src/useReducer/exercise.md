@@ -14,7 +14,7 @@ This part of the exercise, aside from recapitulating the _useEffect_ hook, illus
 
 ## Example 2
 
-To mitigate the problems explored in the previous exercise part, implement the same example with the _useReducer_ hook.
+To mitigate the problems explored in the previous exercise part, implement the same example with the _useReducer_ hook, now in `example_2.jsx`.
 
 Use the counter example from the [documentation](https://reactjs.org/docs/hooks-reference.html#usereducer) as a guide.
 
