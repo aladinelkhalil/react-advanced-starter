@@ -6,13 +6,13 @@ import reportWebVitals from './reportWebVitals';
 
 // ...
 // Uncomment an example to run it.
-// import { App } from './useReducer';
+import { App } from './useReducer';
 // import { App } from './useStateImpl';
 // import { App } from './useTask';
 // import { App } from './dependencyContext';
 // import { App } from './errorBoundary';
 // import { App } from './authContext';
-import { App } from './todo';
+// import { App } from './todo';
 
 // ...
 
