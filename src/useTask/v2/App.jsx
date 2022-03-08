@@ -6,7 +6,7 @@ import {
 import _ from 'lodash';
 
 import {
-  fetchUser
+  fetchResource
 } from '../shared/util';
 
 import {
@@ -26,8 +26,12 @@ const inputStyle = {
 
 // ...
 
+const getUserResource = userId => `users/${userId}`;
+
 export function App() {
   const [userId, setUserId] = useState(1);
+
+  // TODO 1.1: Add user resource state (a string, see the helper method getUserResource above).
 
   const {
     status,
@@ -36,19 +40,20 @@ export function App() {
     run
   } = useTask();
 
-  // TODO 1:
-  // 
-  // Create a debounced function debounceTask, using _.debounce, to run the task fetchUser in handleChange. 
+  // TODO 1.2: Add a useEffect which runs every time the user resource state changes, and fetches the user.
+
+  // TODO 1.3: Create a debounced function debounced_setUserResource - using _.debounce - that calls fetchResource 
+  // and runs the the corresponding task; this debounced function will be invoked in the handleChange event handler. 
   // Investigate its behaviour.
   //
   // TODO 2:
   // 
-  // Use the useMemo hook to create a new (memoized) debounceTask function (comment out the previous one).
+  // Use the useMemo hook to create a new (memoized) debounced_setUserResource function (comment out the previous one).
   //
   // Use of useMemo hook:
   // 
-  //  const debounceTask = useMemo(
-  //   () => /* return debounced function to run the task fetchUser */, 
+  //  const debounced_setUserResource = useMemo(
+  //   () => /* return debounced function to set the user resource state */ 
   //   [any dependencies]
   //  ).
 
@@ -57,9 +62,7 @@ export function App() {
 
     setUserId(userId);
 
-    // run the debounced task, instead of running the task upon every input change.
-    // debounceTask(userId);
-    run(fetchUser(userId));
+    // set the (new) user resource state, using debounced_setUserResource.
   };
 
   return (

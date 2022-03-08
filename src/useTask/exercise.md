@@ -39,7 +39,7 @@ Add support for fetching _both_ an initial user (ID = 1) upon first render, as w
 
 > Note: Change the export to _v2_ in `index.js`.
 
-In this part you will improve the user experience by implementing "instant fetch" functionality, whereby data fetching will occur instantly when a different user ID is selected.
+In this part you will improve the user experience by implementing "instant fetch" functionality, whereby data fetching will occur instantly when a different user ID is selected (and will also fetch the default user automatically upon component mount).
 
 To prohibit unnecessary fetches debouncing will be employed, via Lodash [debounce](https://lodash.com/docs/#debounce).
 
@@ -47,9 +47,13 @@ There are two sections to implement:
 
 * _TODO 1_
 
-  Create a debounced function that runs a `fetchUser` task.
+  **First**, add an additional state variable called `userResource`; we separate the user ID state displayed in the UI from the actual user resource state that refers to the user to fetch. The helper method `getUserResource` accepts a user ID and returns the resource path to pass to the imported method `fetchResource`. 
 
-  > Note: For Lodash _debounce_, set the `wait` parameter to a suitable delay, e.g. 2000 ms. No extra options are necessary.
+  **Second**, add an `useEffect` call that will be run every time the `userResource` state changes, and fetches the corresponding user data (this is similar to the optional exercise in _part 1_ above).
+
+  **Third**, create a debounced function in the `App` ecomponent that sets the new `userResource` state.
+
+  > Note: For Lodash _debounce_, set the `wait` parameter to a suitable delay, e.g. 500 ms. No extra options are necessary.
 
   Observe the Network panel in Chrome Devtools when testing the debounced function and note the behavior.
 
@@ -61,7 +65,7 @@ There are two sections to implement:
 
 In certain scenarios memoization can be avoided, typically by __lifting logic outside the component__.
 
-Implement a debouncing solution where _useMemo_ is not utilized.
+Implement a debouncing solution where _useMemo_ is **not** utilized.
 
 ### Optional: AbortController
 
@@ -71,6 +75,6 @@ For certain types of tasks however, explicit cancellation may be possible. E.g.,
 
 Peruse [this article](https://medium.com/datadriveninvestor/aborting-cancelling-requests-with-fetch-or-axios-db2e93825a36) for an overview of AbortController, and use an _Axios cancel token_ to cancel a fetch task for a given user ID.
 
-> Hint 1: In `shared/util.js`, create a new function _fetchUserCancellable_ (based on _fetchUser_) which uses an Axios cancel token. Also, to better observe request cancellation, throttle the network speed in Chrome Devtools to e.g. "Slow 3G".
+> Hint 1: In `shared/util.js`, create a new function _fetchResourceCancellable_ (based on _fetchResource_) which uses an Axios cancel token. Also, to better observe request cancellation, throttle the network speed in Chrome Devtools to e.g. "Slow 3G".
 
 > Hint 2: In _useTask_, in addition to setting a `cancelled` property on the task (Promise object), check for whether it has a `cancel` method and if so, invoke it.
