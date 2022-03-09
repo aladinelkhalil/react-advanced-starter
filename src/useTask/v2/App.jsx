@@ -42,8 +42,8 @@ export function App() {
 
   // TODO 1.2: Add a useEffect which runs every time the user resource state changes, and fetches the user.
 
-  // TODO 1.3: Create a debounced function debounced_setUserResource - using _.debounce - that calls fetchResource 
-  // and runs the the corresponding task; this debounced function will be invoked in the handleChange event handler. 
+  // TODO 1.3: Create a debounced function debounced_setUserResource - using _.debounce - that updates the user resource state;
+  // this debounced function will be invoked in the handleChange event handler (see below). 
   // Investigate its behaviour.
   //
   // TODO 2:
@@ -54,7 +54,7 @@ export function App() {
   // 
   //  const debounced_setUserResource = useMemo(
   //   () => /* return debounced function to set the user resource state */ 
-  //   [any dependencies]
+  //   []
   //  ).
 
   const handleChange = e => {
