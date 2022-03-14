@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// React 18: Comment out the ReactDOM import above.
+// import { createRoot } from 'react-dom/client';
+
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +19,9 @@ import { App } from './useReducer';
 // import { App } from './todo';
 // import { App } from './dataFetching';
 
+// import { App } from './react18/useDeferredValue';
+// import { App } from './react18/suspense';
+
 // ...
 
 ReactDOM.render(
@@ -24,6 +30,11 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// ...
+// React 18: Comment out ReactDOM.render() above.
+// const root = createRoot(document.getElementById('root'));
+// root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
