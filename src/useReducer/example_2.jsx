@@ -1,29 +1,27 @@
-import { 
-  useState, 
-  useEffect, 
-  useReducer 
-} from 'react';
+import { useState, useEffect, useReducer } from "react";
 
 // ...
 
 function Counter() {
   const [state, dispatch] = useReducer(
+    // Reducer function
     (state, action) => {
       switch (action.type) {
         // TODO:
-        // 
+        //
         // Return updated state by handling actions:
-        // 
+        //
         // UPDATE: Increments the count by incBy.
-        // CHANGE: Change the incBy value.  
+        // CHANGE: Change the incBy value.
 
         default:
           return state;
       }
     },
+    // Initial state
     {
       count: 0,
-      incBy: 1
+      incBy: 1,
     }
   );
 
@@ -37,11 +35,11 @@ function Counter() {
       <input
         type="number"
         value={state.incBy}
-        onChange={e => {
+        onChange={(e) => {
           const incBy = +e.target.value;
 
           // TODO:
-          // 
+          //
           // Dispatch a CHANGE action.
         }}
       />
@@ -58,5 +56,5 @@ export function App() {
       <button onClick={() => setShow(false)}>Hide Counter</button>
       {show && <Counter />}
     </>
-  )
+  );
 }
