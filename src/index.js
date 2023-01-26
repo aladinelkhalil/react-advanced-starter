@@ -4,18 +4,15 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
 // Uncomment an example to run it.
-import { App } from "./useReducer";
-// import { App } from './useStateImpl';
-// import { App } from './useTask';
-// import { App } from './useFetch';
-// import { App } from './dependencyContext';
-// import { App } from './errorBoundary';
-// import { App } from './authContext';
-// import { App } from './todo';
-// import { App } from './dataFetching';
+import { App } from "./1_useReducer";
+// import { App } from "./2_useTask";
+// import { App } from "./3_useFetch";
+// import { App } from "./4_errorBoundary";
+// import { App } from "./5_performance";
+// import { App } from "./6_dataFetching";
 
-// import { App } from './react18/useDeferredValue';
-// import { App } from './react18/suspense';
+// import { App } from "./7_react18/useDeferredValue";
+// import { App } from "./7_react18/suspense";
 
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
